@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Formulário - Purific App</title>
+    <style>
+
+      h1 {
+        text-align: center;
+        font-size: 3rem;
+        font-weight: bold;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #2c3e50;
+        margin-bottom: 20px;
+      }
+      p {
+        text-align: center;
+        max-width: 600px;
+        margin: 0 auto 20px auto;
+      }
+      legend {
+        text-align: center;
+        width: 100%;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f5f7fa;
+        color: #333;
+        padding: 20px;
+      }
+      h1 {
+        color: #2c3e50;
+      }
+      form {
+        background-color: #fff;
+        padding: 20px 30px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        max-width: 600px;
+        margin: 0 auto;
+      }
+      fieldset {
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        padding: 15px 20px;
+        margin-bottom: 28px;
+      }
+      legend h2 {
+        margin: 0;
+        padding: 0 10px;
+        color: #34495e;
+        font-weight: 600;
+      }
+      label {
+        display: block;
+        margin-bottom: 14px;
+        font-weight: 500;
+      }
+      /* Alinha radio buttons à esquerda do texto */
+      .radio-group {
+        display: flex;
+        align-items: flex-end;
+        gap: 28px;
+        margin: 10px 0 26px 0;
+      }
+      .radio-option {
+        display: flex;
+        align-items: flex-end;
+        gap: 6px;
+        font-size: 1em;
+        line-height: 1.2;
+      }
+      /* Remove margem extra dos radios e alinha melhor */
+      input[type="radio"] {
+        margin-left: 0;
+        margin-right: 0;
+        vertical-align: middle;
+        position: static;
+        top: 0;
+        accent-color: #27ae60;
+        width: 18px;
+        height: 18px;
+      }
+      input[type="text"],
+      input[type="number"],
+      input[type="email"],
+      textarea,
+      select {
+        width: 100%;
+        padding: 8px 10px;
+        margin-bottom: 15px;
+        border: 1px solid #bbb;
+        border-radius: 4px;
+        font-size: 1em;
+        box-sizing: border-box;
+      }
+      input[type="radio"],
+      input[type="checkbox"] {
+        margin-right: 6px;
+      }
+      input[type="submit"] {
+        background-color: #27ae60;
+        border: none;
+        color: white;
+        padding: 12px 20px;
+        font-size: 1.1em;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+      }
+      input[type="submit"]:hover {
+        background-color: #219150;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>Formulário - Purific App</h1>
+    <p>Ajude-nos a montar nosso app! Envie suas ideias, sugestões ou o que gostaria de ver nele.</p>
+
+    <form method="post" action="submit">
+      <fieldset>
+        <legend><h2>Informações Pessoais</h2></legend>
+
+        <label for="nome">Nome: </label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="idade">Idade: </label>
+        <input type="number" id="idade" name="idade" min="0" max="120" required><br><br>
+      </fieldset>
+
+      <fieldset>
+        <legend><h2>Sobre o App</h2></legend>
+
+
+        <label>Você gostaria de ver seu progresso (quantidade de água/medicação) em gráficos?</label>
+        <div class="radio-group">
+          <label class="radio-option" for="grafico-sim">Sim <input type="radio" id="grafico-sim" name="grafico" value="sim"></label>
+          <label class="radio-option" for="grafico-nao">Não <input type="radio" id="grafico-nao" name="grafico" value="nao"></label>
+        </div>
+
+
+        <label>Gostaria de receber dicas de saúde e bem-estar junto com os lembretes?</label>
+        <div class="radio-group">
+          <label class="radio-option" for="dicas-sim">Sim <input type="radio" id="dicas-sim" name="dicas" value="sim"></label>
+          <label class="radio-option" for="dicas-nao">Não <input type="radio" id="dicas-nao" name="dicas" value="nao"></label>
+        </div>
+
+
+        <label>Você gostaria de conectar o app com outros dispositivos (smartwatch, Alexa, etc.)?</label>
+        <div class="radio-group">
+          <label class="radio-option" for="dispositivos-sim">Sim <input type="radio" id="dispositivos-sim" name="dispositivos" value="sim"></label>
+          <label class="radio-option" for="dispositivos-nao">Não <input type="radio" id="dispositivos-nao" name="dispositivos" value="nao"></label>
+        </div>
+
+
+        <label>Seria útil compartilhar seu progresso com alguém (ex: médico, familiar, amigo)?</label>
+        <div class="radio-group">
+          <label class="radio-option" for="compartilhar-sim">Sim <input type="radio" id="compartilhar-sim" name="compartilhar" value="sim"></label>
+          <label class="radio-option" for="compartilhar-nao">Não <input type="radio" id="compartilhar-nao" name="compartilhar" value="nao"></label>
+        </div>
+
+        <label>O que você não gostaria de receber num lembrete?</label><br>
+        <textarea id="lembrete" name="lembrete" rows="4" cols="50" placeholder="Escreva aqui..."></textarea><br><br>
+      </fieldset>
+
+      <fieldset>
+        <legend><h2>Recompensas e Incentivos</h2></legend>
+
+        <label for="incentivo">Qual tipo de recompensa ou incentivo te motivaria a manter o hábito?</label><br>
+        <select id="incentivo" name="incentivo">
+          <option value="" disabled selected>Escolha uma opção...</option>
+          <option value="pontos">Pontos para trocar por prêmios virtuais</option>
+          <option value="feedback">Feedback positivo e mensagens motivacionais</option>
+          <option value="desafios">Desafios semanais com amigos</option>
+          <option value="nada">Nada disso, prefiro só o lembrete mesmo</option>
+          <option value="outro">Outro (especifique abaixo)</option>
+        </select><br><br>
+
+        <label for="outroTexto" id="outroLabel" style="display: none;">Se escolheu "Outro", escreva aqui:</label><br>
+        <textarea id="outroTexto" name="outroTexto" rows="4" cols="50" style="display: none;" placeholder="Escreva aqui..."></textarea><br><br>
+      </fieldset>
+
+      <br>
+      <input type="submit" value="Enviar">
+    </form>
+    <script>
+      const select = document.getElementById('incentivo');
+      const outroTexto = document.getElementById('outroTexto');
+      const outroLabel = document.getElementById('outroLabel');
+
+      select.addEventListener('change', function () {
+        const isOutro = select.value === 'outro';
+        outroTexto.style.display = isOutro ? 'block' : 'none';
+        outroLabel.style.display = isOutro ? 'block' : 'none';
+      });
+      </script>
+  </body>
+</html>
