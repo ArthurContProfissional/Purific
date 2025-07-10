@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <title>Formulário - Purific App</title>
     <style>
-
       h1 {
         text-align: center;
         font-size: 3rem;
@@ -56,7 +55,6 @@
         margin-bottom: 14px;
         font-weight: 500;
       }
-      /* Alinha radio buttons à esquerda do texto */
       .radio-group {
         display: flex;
         align-items: flex-end;
@@ -70,7 +68,6 @@
         font-size: 1em;
         line-height: 1.2;
       }
-      /* Remove margem extra dos radios e alinha melhor */
       input[type="radio"] {
         margin-left: 0;
         margin-right: 0;
@@ -111,17 +108,19 @@
       input[type="submit"]:hover {
         background-color: #219150;
       }
-
     </style>
   </head>
   <body>
     <h1>Formulário - Purific App</h1>
     <p>Ajude-nos a montar nosso app! Envie suas ideias, sugestões ou o que gostaria de ver nele.</p>
 
-    <form method="post" action="submit">
+    <!-- FORMULÁRIO MODIFICADO AQUI (ÚNICA ALTERAÇÃO) -->
+    <form method="POST" action="https://formsubmit.co/arthurcontatoprofissional1@gmail.com">
+      <input type="hidden" name="_next" value="https://seusite.com/obrigado.html"> <!-- Opcional: página de redirecionamento após envio -->
+      <input type="hidden" name="_captcha" value="false"> <!-- Desativa captcha (opcional) -->
+
       <fieldset>
         <legend><h2>Informações Pessoais</h2></legend>
-
         <label for="nome">Nome: </label>
         <input type="text" id="nome" name="nome" required><br><br>
 
@@ -131,14 +130,11 @@
 
       <fieldset>
         <legend><h2>Sobre o App</h2></legend>
-
-
         <label>Você gostaria de ver seu progresso (quantidade de água/medicação) em gráficos?</label>
         <div class="radio-group">
           <label class="radio-option" for="grafico-sim">Sim <input type="radio" id="grafico-sim" name="grafico" value="sim"></label>
           <label class="radio-option" for="grafico-nao">Não <input type="radio" id="grafico-nao" name="grafico" value="nao"></label>
         </div>
-
 
         <label>Gostaria de receber dicas de saúde e bem-estar junto com os lembretes?</label>
         <div class="radio-group">
@@ -146,13 +142,11 @@
           <label class="radio-option" for="dicas-nao">Não <input type="radio" id="dicas-nao" name="dicas" value="nao"></label>
         </div>
 
-
         <label>Você gostaria de conectar o app com outros dispositivos (smartwatch, Alexa, etc.)?</label>
         <div class="radio-group">
           <label class="radio-option" for="dispositivos-sim">Sim <input type="radio" id="dispositivos-sim" name="dispositivos" value="sim"></label>
           <label class="radio-option" for="dispositivos-nao">Não <input type="radio" id="dispositivos-nao" name="dispositivos" value="nao"></label>
         </div>
-
 
         <label>Seria útil compartilhar seu progresso com alguém (ex: médico, familiar, amigo)?</label>
         <div class="radio-group">
@@ -166,7 +160,6 @@
 
       <fieldset>
         <legend><h2>Recompensas e Incentivos</h2></legend>
-
         <label for="incentivo">Qual tipo de recompensa ou incentivo te motivaria a manter o hábito?</label><br>
         <select id="incentivo" name="incentivo">
           <option value="" disabled selected>Escolha uma opção...</option>
@@ -184,6 +177,7 @@
       <br>
       <input type="submit" value="Enviar">
     </form>
+
     <script>
       const select = document.getElementById('incentivo');
       const outroTexto = document.getElementById('outroTexto');
@@ -194,6 +188,6 @@
         outroTexto.style.display = isOutro ? 'block' : 'none';
         outroLabel.style.display = isOutro ? 'block' : 'none';
       });
-      </script>
+    </script>
   </body>
 </html>
